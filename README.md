@@ -9,5 +9,21 @@ pip3 install matplotlib.pyplot
 pip3 install numpy
 ```
 ### simpy 
-we used simpy in order to make a discrete event simulation. 
+
 [what is simpy ?](https://simpy.readthedocs.io/en/latest/simpy_intro/index.html)
+we used simpy in order to make a discrete event simulation. 
+
+### config file
+
+```yaml
+config:
+    RANDOM_SEED : 1111
+    NUM_AREA : 2                         # number of meeting zone (2 persons can be enter is this zone)
+    TIMEMEET : 10                        # minutes staying in the meeting zone
+    SIM_TIME : 20000                     # Simulation time in minutes (in on cycle)
+    NUM_PERSON : 10000                   # number of person in the simulation
+    NUM_TIPS : 3000                      # number of object (person) go in meeting zone (in one cycle)
+    NUM_CYCLE_OUTPUT : 20                # number of cycle
+```
+
+
