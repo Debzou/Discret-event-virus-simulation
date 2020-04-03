@@ -8,6 +8,8 @@ pip3 install simpy
 pip3 install matplotlib.pyplot
 pip3 install numpy
 ```
+Version : python 3.6.9 64bits
+
 ### simpy 
 
 [what is simpy ?](https://simpy.readthedocs.io/en/latest/simpy_intro/index.html).
@@ -38,6 +40,9 @@ run this command in your shell in order to visualise the simulation.
 python3 analyse.py 
 ```
 analyse.py process the file log.txt
+
+### resulats
+![Image](screen.png)
 
 ### other
 Here is the link to my non-discrete event simulation project: https://github.com/Debzou/SimulationVirusContainment
