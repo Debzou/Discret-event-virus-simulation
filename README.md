@@ -37,6 +37,7 @@ run this command in your shell in order to visualise the simulation.
 ```bash
 python3 analyse.py 
 ```
-analyse.py analyse log.txt
+analyse.py process the file log.txt
 
-
+### other
+Here is the link to my non-discrete event simulation project: https://github.com/Debzou/SimulationVirusContainment
