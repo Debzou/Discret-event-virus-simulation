@@ -34,12 +34,18 @@ if __name__ == "__main__":
     print(listCumlative)
     # X abscissa 
     x=range(0,len(listscore))
+
+    
+
     # plot infected/days
-    plt.plot(x, listscore)
+    plt.plot(x, listscore,'-b', label='infected')
     # plot infected cumulative/days
-    plt.plot(x,listCumlative)
+    plt.plot(x,listCumlative,'-r', label='infected cumulative')
     # set a title
     plt.suptitle('Virus propagation')
     # display plot
+    plt.xlabel("days (d)")
+    plt.ylabel("number of infected")
+    plt.legend()
     plt.show()
             
