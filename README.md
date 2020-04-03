@@ -45,7 +45,7 @@ analyse.py process the file log.txt
 ![Image](screen.png)
 
 
-We observe that the number of infected people is increasing exponentially. The peak of infected people (blue curve) is reached with 1500 cases of contamination in only 1 day for a population of 100 000 inhabitants. 
+We observe that the number of infected people is increasing exponentially. The peak of infected people (blue curve) is reached with 1500 cases of contamination in only 1 day for a population of 10 000 inhabitants. 
 Towards the end of the epidemic, the red curve becomes constant because the entire population has been infected. 
 
 ### other
