@@ -10,7 +10,7 @@ pip3 install numpy
 ```
 ### simpy 
 
-[what is simpy ?](https://simpy.readthedocs.io/en/latest/simpy_intro/index.html)
+[what is simpy ?](https://simpy.readthedocs.io/en/latest/simpy_intro/index.html).
 we used simpy in order to make a discrete event simulation. 
 
 ### config file
@@ -25,5 +25,18 @@ config:
     NUM_TIPS : 3000                      # number of object (person) go in meeting zone (in one cycle)
     NUM_CYCLE_OUTPUT : 20                # number of cycle
 ```
+
+### start my simulation
+run this command in your shell in order to start the simulation
+```bash
+python3 simulation.py > log.txt 
+```
+this command allows you to write the application log in a txt file.
+
+run this command in your shell in order to visualise the simulation.
+```bash
+python3 analyse.py 
+```
+analyse.py analyse log.txt
 
 
