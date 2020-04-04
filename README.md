@@ -53,7 +53,7 @@ Towards the end of the epidemic, the red curve becomes constant because the enti
 
 let's go into more detail
 
-I'm doing a linear regression from the first quartile to the third quartile. We focus on the coeficient of the slope. without the containment the 
+I'm doing a linear regression from the first quartile to the third quartile. We focus on the coeficient of the slope. without the containment this coeficient is ~ 926. which means there are 965 more people infected every day.
 
 ![Image](screen2.png)
 
