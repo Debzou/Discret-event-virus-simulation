@@ -38,8 +38,7 @@ if __name__ == "__main__":
     
     # cumulative sum 
     listCumlative = np.cumsum(listscore, dtype=int)
-    # print this list in the console
-    print(listCumlative)
+    
     # X abscissa 
     x=range(0,len(listscore))
 
@@ -74,8 +73,8 @@ if __name__ == "__main__":
     # first find coef    
     slope, intercept, r_value, p_value, std_err = stats.linregress(xOUT,listCumlativeOUT)
     fitLine = predict(range(index1,index2))
-    # display
-    # set a title
+    
+    # display    
     plt.suptitle('Linear regression between quantile 1 et quantile 3') 
     plt.xlabel("days (d)")
     plt.ylabel("number of infected")
