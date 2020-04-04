@@ -75,7 +75,7 @@ if __name__ == "__main__":
     fitLine = predict(range(index1,index2))
     
     # display    
-    plt.suptitle('Linear regression between quantile 1 et quantile 3') 
+    plt.suptitle('Linear regression between quartile 1 et quartile 3') 
     plt.xlabel("days (d)")
     plt.ylabel("number of infected")
     plt.plot(xOUT,fitLine,label="{}X + {}".format(slope,intercept))
