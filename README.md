@@ -53,7 +53,10 @@ Towards the end of the epidemic, the red curve becomes constant because the enti
 
 let's go into more detail
 
+I'm doing a linear regression from the first quartile to the third quartile. We focus on the coeficient of the slope. without the containment the 
+
 ![Image](screen2.png)
+
 
 #### with containment 
 
