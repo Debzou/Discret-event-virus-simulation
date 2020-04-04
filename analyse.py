@@ -6,9 +6,17 @@
 #library used
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy import stats
 
 FILE_NAME = "log.txt"
 
+def predict(xOUT):
+    """
+    create a linear function
+    """
+    # print("{}X + {}".format(slope,intercept))
+    return slope * xOUT + intercept
+    
 
 # main
 if __name__ == "__main__":
@@ -49,3 +57,30 @@ if __name__ == "__main__":
     plt.legend()
     plt.show()
             
+    ### deeper analysis
+
+    # remove outlier (value < q1 and value > q3)
+    q1 = np.quantile(listCumlative,0.25)
+    q3 = np.quantile(listCumlative,0.75)
+    listCumlativeOUT = list(filter(lambda x: x > q1 and x < q3,listCumlative))
+    
+    # find index connected with list X
+    index1 = list(listCumlative).index(listCumlativeOUT[0])
+    index2 = list(listCumlative).index(listCumlativeOUT[-1])+1
+    xOUT = list(range(index1,index2))
+    
+    # slope analysis
+    # linear regression
+    # first find coef    
+    slope, intercept, r_value, p_value, std_err = stats.linregress(xOUT,listCumlativeOUT)
+    fitLine = predict(range(index1,index2))
+    # display
+    # set a title
+    plt.suptitle('Linear regression between quantile 1 et quantile 3') 
+    plt.xlabel("days (d)")
+    plt.ylabel("number of infected")
+    plt.plot(xOUT,fitLine,label="{}X + {}".format(slope,intercept))
+    plt.plot(xOUT,listCumlativeOUT,label='infected cumulative')
+    plt.legend()
+    plt.show()
+    
