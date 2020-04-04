@@ -42,11 +42,22 @@ python3 analyse.py
 analyse.py process the file log.txt
 
 ### resulats
+
+#### without containment 
+
 ![Image](screen.png)
 
 
 We observe that the number of infected people is increasing exponentially. The peak of infected people (blue curve) is reached with 1500 cases of contamination in only 1 day for a population of 10 000 inhabitants. 
 Towards the end of the epidemic, the red curve becomes constant because the entire population has been infected. 
+
+let's go into more detail
+
+![Image](screen2.png)
+
+#### with containment 
+
+
 
 ### other
 Here is the link to my non-discrete event simulation project: https://github.com/Debzou/SimulationVirusContainment
