@@ -60,11 +60,25 @@ I'm doing a linear regression from the first quartile to the third quartile. We 
 
 #### with containment 
 
+to simulate containment, it is assumed that the number of people exiting is reduced by 90%. 
+
+so we change the config file :
+
+```yaml
+config:
+    NUM_TIPS : 3000                      # number of object (person) go in meeting zone (in one cycle)
+    NUM_CYCLE_OUTPUT : 120               # number of cycle
+```
+
 It takes longer for the virus to spread. It is only after the 40th day that the virus will start infecting many people.  The virus affects entirely the population from the 100th day when previously we saw that the virus contaminates all the population in only 17 days !
+
+In addition, the peak of infected / days is only 590
 
 ![Image](screen3.png)
 
+Linear regression allows us to say that containment reduces the number of infected people per day. 
 
+I can therefore conclude that the confinement allows us to reduce the congestion in hospitals and to have a less brutal epidemic.
 
 ![Image](screen4.png)
 
