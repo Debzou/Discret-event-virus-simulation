@@ -53,11 +53,20 @@ Towards the end of the epidemic, the red curve becomes constant because the enti
 
 let's go into more detail
 
+I'm doing a linear regression from the first quartile to the third quartile. We focus on the coeficient of the slope. without the containment this coeficient is ~ 926. which means there are 965 more people infected every day.
+
 ![Image](screen2.png)
+
 
 #### with containment 
 
+It takes longer for the virus to spread. It is only after the 40th day that the virus will start infecting many people.  The virus affects entirely the population from the 100th day when previously we saw that the virus contaminates all the population in only 17 days !
 
+![Image](screen3.png)
+
+
+
+![Image](screen4.png)
 
 ### other
 Here is the link to my non-discrete event simulation project: https://github.com/Debzou/SimulationVirusContainment
