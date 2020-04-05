@@ -36,7 +36,7 @@ if __name__ == "__main__":
     NUM_CYCLE_OUTPUT = cfg['config']['NUM_CYCLE_OUTPUT']
     NUM_TIPS = cfg['config']['NUM_TIPS']
     SIM_TIME = cfg['config']['SIM_TIME']
-    
+    p = cfg['config']['P']
     # This helps reproducing the results 
     random.seed(RANDOM_SEED)  
 
@@ -47,7 +47,7 @@ if __name__ == "__main__":
         env = simpy.Environment()
 
         # Setup and start the simulation 
-        env.process(utils.setup(env, NUM_AREA, TIMEMEET,NUM_PERSON,NUM_TIPS))
+        env.process(utils.setup(env, NUM_AREA, TIMEMEET,NUM_PERSON,NUM_TIPS,p))
 
         # Execute!
         env.run(until=SIM_TIME)

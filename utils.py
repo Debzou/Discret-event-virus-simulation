@@ -28,17 +28,24 @@ class Person(object):
         self.id = id
         self.status = status
 
-    def infected(self,id):
+    def infected(self,id,p):
         """
         you infect an other person or not
+        with a probabily p
         """
 
         if self.status == "sick" and listperson[id].status != "sick" :
-            listperson[id].status="sick"
-            print("the person {} is infected by person {} ".format( self.id, listperson[id].id ))
+            if random.random() <= p :
+                listperson[id].status="sick"
+                print("the person {} is infected by person {} ".format( self.id, listperson[id].id ))
+            else:
+                print("you have a chance you are not infected")
         elif listperson[id].status == "sick" and self.status != "sick":
-            self.status = "sick"
-            print("the person {} is infected by person {} ".format(listperson[id].id, self.id))
+            if random.random() <= p :
+                self.status = "sick"
+                print("the person {} is infected by person {} ".format(listperson[id].id, self.id))
+            else:
+                print("you have a chance you are not infected")
         else:
             print("nothing")
             pass
@@ -53,19 +60,19 @@ class World(object):
         self.meetime = meetime
         
 
-    def area(self, id,num_person,timemeet):
+    def area(self, id,num_person,timemeet,p):
         """
         propagation's area
         in this area , one person can meet an other person
         """
         rand = random.randint(0,num_person)
         print("Person {} : Enter in the meeting zone {}".format(rand,self.env.now))
-        listperson[id].infected(rand)
+        listperson[id].infected(rand,p)
         yield self.env.timeout(timemeet)
         print("Person {} : Enter in the meeting zone {}".format(rand,self.env.now))
 
 
-def meet(env, name, cw,id,num_person,timemeet):
+def meet(env, name, cw,id,num_person,timemeet,p):
     """
     create meet between person (in the area)
     """
@@ -74,12 +81,12 @@ def meet(env, name, cw,id,num_person,timemeet):
         yield request
         # meeting zone
         print("{} : Enter in the meeting zone {}".format(name,env.now))
-        yield env.process(cw.area(id,num_person,timemeet))
+        yield env.process(cw.area(id,num_person,timemeet,p))
         # exit the meeting
         print('%s exit the meeting zone %.2f.' % (name, env.now))
 
 
-def setup(env, area_zone, meetime,num_person,num_tips):
+def setup(env, area_zone, meetime,num_person,num_tips,p):
     """
     init the simulation
     """
@@ -102,6 +109,6 @@ def setup(env, area_zone, meetime,num_person,num_tips):
     # start the meet between person
     for i in range(num_tips):
         rand = random.randint(0,num_person)
-        env.process(meet(env, 'Person %d' % rand, world,rand,num_person,meetime))
+        env.process(meet(env, 'Person %d' % rand, world,rand,num_person,meetime,p))
     yield env.timeout(random.randint(500 - 2, 500 + 2))
     
