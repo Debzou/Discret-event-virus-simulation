@@ -47,7 +47,7 @@ if __name__ == "__main__":
         env = simpy.Environment()
 
         # Setup and start the simulation 
-        env.process(utils.setup(env, NUM_AREA, TIMEMEET,NUM_PERSON,NUM_TIPS,p))
+        env.process(utils.setup(env, NUM_AREA, TIMEMEET,NUM_PERSON,NUM_TIPS,p,c))
 
         # Execute!
         env.run(until=SIM_TIME)

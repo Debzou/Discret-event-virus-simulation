@@ -86,7 +86,7 @@ def meet(env, name, cw,id,num_person,timemeet,p):
         print('%s exit the meeting zone %.2f.' % (name, env.now))
 
 
-def setup(env, area_zone, meetime,num_person,num_tips,p):
+def setup(env, area_zone, meetime,num_person,num_tips,p,day):
     """
     init the simulation
     """
@@ -95,8 +95,8 @@ def setup(env, area_zone, meetime,num_person,num_tips,p):
 
     # Create n person person in your world
     # patient zero ( infected )
-
-    listperson.append(Person(0,"sick"))
+    if day == 0:
+        listperson.append(Person(0,"sick"))
     for i in range(1,num_person):
         listperson.append(Person(i))
     
