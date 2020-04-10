@@ -1,4 +1,5 @@
-# Discret-event-virus-simulation
+# Discret-event-virus-simulation 
+( the report is the result part )
 
 ### installation 
 
@@ -26,6 +27,7 @@ config:
     NUM_PERSON : 10000                   # number of person in the simulation
     NUM_TIPS : 3000                      # number of object (person) go in meeting zone (in one cycle)
     NUM_CYCLE_OUTPUT : 20                # number of cycle
+    P : 1                                # probabilty to infect someone
 ```
 
 ### start my simulation
@@ -68,6 +70,7 @@ so we change the config file :
 config:
     NUM_TIPS : 3000                      # number of object (person) go in meeting zone (in one cycle)
     NUM_CYCLE_OUTPUT : 120               # number of cycle
+    P : 0.8                              # you have less chance to infect someone because your are in a containment
 ```
 
 It takes longer for the virus to spread. It is only after the 40th day that the virus will start infecting many people.  The virus affects entirely the population from the 100th day when previously we saw that the virus contaminates all the population in only 17 days !
